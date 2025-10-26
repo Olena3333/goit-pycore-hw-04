@@ -9,7 +9,7 @@ def parse_input(user_input):
 
 def add_contact(args, contacts):
     if len(args) < 2:
-        return "Please enter name and phone. Example: add John 12345"
+        return "Please enter name and phone. Example: add Lena 12345"
     name, phone = args
     contacts[name] = phone
     return "Contact added."
@@ -17,7 +17,7 @@ def add_contact(args, contacts):
 
 def change_contact(args, contacts):
     if len(args) < 2:
-        return "Please enter name and new phone. Example: change John 98765"
+        return "Please enter name and new phone. Example: change Lena 98765"
     name, phone = args
     if name in contacts:
         contacts[name] = phone
@@ -28,7 +28,7 @@ def change_contact(args, contacts):
 
 def show_phone(args, contacts):
     if len(args) < 1:
-        return "Please enter a name. Example: phone John"
+        return "Please enter a name. Example: phone Lena"
     name = args[0]
     return contacts.get(name, "Contact not found.")
 
