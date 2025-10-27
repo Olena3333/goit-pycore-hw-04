@@ -3,20 +3,20 @@ def get_cats_info(path):
     try:
         with open(path, "r", encoding="utf-8") as file:
             for line in file:
-                line = line.strip() #прибирає все зайве з початку і кінця рядка
-                if not line: #Пропускаємо порожні рядки
+                line = line.strip() 
+                if not line: 
                     continue
-                parts = line.split(",") #ділить рядок на список частин
+                parts = line.split(",") 
                 if len(parts) != 3:
                     print (f"Пропущено некоректний рядок: {line}")
                     continue
                 cat_id, name, age = parts
                 cats.append({"id": cat_id,"name": name, "age": age})
         return cats
-    except FileNotFoundError:  #файл не існує
+    except FileNotFoundError:  
         print(f"Помилка: файл '{path}' не знайдено.")
         return []
-    except Exception as e:   #усі інші помилки
+    except Exception as e:   
         print(f"Сталася помилка: {e}")
         return []
     

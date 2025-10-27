@@ -1,12 +1,12 @@
 def total_salary(path):
-    try:   #якщо файл відсутній або у ньому помилка
-        with open(path, "r", encoding="utf-8") as file: #Відкриваємо файл для читання
+    try:  
+        with open(path, "r", encoding="utf-8") as file: 
             salaries = []
-            for line in file:  #читає файл пострічково
-                name, salary = line.strip().split(",") #strip() — прибирає пробіли, split(",") — ділить рядок за комою
-                salaries.append(int(salary)) #додаємо зарплату до списку, але перетворюємо її у число
-            total = sum(salaries) #загальна сума зарплат
-            average = total / len(salaries) #середня зарплату
+            for line in file:  
+                name, salary = line.strip().split(",") 
+                salaries.append(int(salary)) 
+            total = sum(salaries) 
+            average = total / len(salaries) 
             return total, average
     except FileNotFoundError:
         print(f"Помилка: файл '{path}' не знайдено.")
@@ -14,8 +14,6 @@ def total_salary(path):
     except Exception as e:
         print(f"Сталася помилка: {e}")
         return 0, 0
-
-    
 
 total, average = total_salary("salary/salary_file.txt")
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")

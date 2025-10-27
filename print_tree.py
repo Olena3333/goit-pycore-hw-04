@@ -25,10 +25,4 @@ else:
         print(f"{Style.BRIGHT}Структура директорії: {path}\n")
         print_tree(path)
 
-#python3 -m venv .venv
-#source .venv/bin/activate
-#pip install colorama
-#pip list
-#pip freeze > requirements.txt
-#pip install -r requirements.txt
 #python print_tree.py "/Users/helensolonikova/Desktop/Python/goit-pycore-hw-04"
